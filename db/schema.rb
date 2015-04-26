@@ -18,9 +18,14 @@ ActiveRecord::Schema.define(version: 20150425204051) do
 
   create_table "users", force: :cascade do |t|
     t.string   "twitter_uid"
+    t.string   "twitter_name"
     t.string   "withings_uid"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "withings_name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
+
+  add_index "users", ["twitter_uid"], name: "index_users_on_twitter_uid", unique: true, using: :btree
+  add_index "users", ["withings_uid"], name: "index_users_on_withings_uid", unique: true, using: :btree
 
 end

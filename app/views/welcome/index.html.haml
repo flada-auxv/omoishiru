@@ -1,2 +1,6 @@
 %h1 重い知る
-%a{href: '/auth/twitter'} Sing in with Twitter
+%div
+  %a{href: '/auth/twitter'} Sign in with Twitter
+  %span
+    Twitter ID:
+    = current_user.twitter_name if current_user
