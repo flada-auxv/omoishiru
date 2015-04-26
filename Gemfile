@@ -13,5 +13,6 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'pry-byebug'
+  gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
 end
