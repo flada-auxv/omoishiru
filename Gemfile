@@ -5,6 +5,7 @@ gem 'hamlit'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'omniauth-twitter'
+gem 'omniauth-withings', github: 'flada-auxv/omniauth-withings'
 gem 'pg'
 gem 'rails', github: "rails/rails", branch: "4-2-stable"
 gem 'sass-rails', '~> 5.0'

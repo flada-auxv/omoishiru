@@ -4,3 +4,8 @@
   %span
     Twitter ID:
     = current_user.twitter_name if current_user
+%div
+  %a{href: '/auth/withings'} Sign in with Withings
+  %span
+    Withings ID:
+    = current_user.withings_name if current_user

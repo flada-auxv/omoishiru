@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController
   def create
-    user = User.find_update_or_create_by_omniauth(omniauth_hash)
+    if current_user
+      current_user.update_by_oauth(omniauth_hash)
+    else
+      user = User.find_update_or_create_by_omniauth(omniauth_hash)
 
-    session[:user_id] = user.id
+      set_current_user(user)
+    end
 
     redirect_to root_path
   end

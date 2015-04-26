@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/flada-auxv/omniauth-withings.git
+  revision: b5bf05615eb94d12dce1868898388f8952d6c17f
+  specs:
+    omniauth-withings (0.1.0)
+      omniauth-oauth
+
+GIT
   remote: git://github.com/rails/rails.git
   revision: c99bea1df015eeff4764e2d886de90620ab9fb67
   branch: 4-2-stable
@@ -193,6 +200,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   omniauth-twitter
+  omniauth-withings!
   pg
   pry-byebug
   rails!
