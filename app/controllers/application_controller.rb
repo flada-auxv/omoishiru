@@ -14,8 +14,4 @@ class ApplicationController < ActionController::Base
   def set_current_user(user)
     session[:user_id] = user.id
   end
-
-  def omniauth_hash
-    env['omniauth.auth']
-  end
 end

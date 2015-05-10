@@ -11,21 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150425204051) do
+ActiveRecord::Schema.define(version: 20150510105003) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string   "twitter_uid"
-    t.string   "twitter_name"
-    t.string   "withings_uid"
-    t.string   "withings_name"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+  create_table "authentications", force: :cascade do |t|
+    t.string  "provider"
+    t.string  "uid"
+    t.string  "name"
+    t.string  "token"
+    t.string  "token_secret"
+    t.integer "user_id"
   end
 
-  add_index "users", ["twitter_uid"], name: "index_users_on_twitter_uid", unique: true, using: :btree
-  add_index "users", ["withings_uid"], name: "index_users_on_withings_uid", unique: true, using: :btree
+  create_table "users", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

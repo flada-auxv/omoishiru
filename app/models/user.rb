@@ -1,19 +1,41 @@
 class User < ActiveRecord::Base
+  has_many :authentications
+
   class << self
-    def find_update_or_create_by_omniauth(omniauth_hash)
-      user = find_or_create_by("#{omniauth_hash.provider}_uid" => omniauth_hash.uid)
-      user.update_by_oauth(omniauth_hash)
-      user
+    def find_or_create_by_oauth(auth_hash)
+      find_by_authentications(auth_hash[:provider], auth_hash[:uid]) || create_by_oauth(auth_hash)
+    end
+
+    def find_by_authentications(provider, uid)
+      includes(:authentications).find_by(authentications: {provider: provider, uid: uid})
+    end
+
+    def create_by_oauth(auth_hash)
+      create do |user|
+        user.authentications.build do |auth|
+          auth.provider     = auth_hash[:provider]
+          auth.uid          = auth_hash[:uid]
+          auth.name         = auth_hash[:info][:name]
+          auth.token        = auth_hash[:credentials][:token]
+          auth.token_secret = auth_hash[:credentials][:secret]
+        end
+      end
     end
   end
 
-  def update_by_oauth(omniauth_hash)
-    attrs = {"#{omniauth_hash.provider}_name" => omniauth_hash.info.name}
-
-    unless attributes["#{omniauth_hash.provider}_uid"]
-      attrs.merge!("#{omniauth_hash.provider}_uid" => omniauth_hash.uid)
+  def create_authentication_by_oauth(auth_hash)
+    authentications.create do |auth|
+      auth.provider     = auth_hash[:provider]
+      auth.uid          = auth_hash[:uid]
+      auth.name         = auth_hash[:info][:name]
+      auth.token        = auth_hash[:credentials][:token]
+      auth.token_secret = auth_hash[:credentials][:secret]
     end
+  end
 
-    update(attrs)
+  %i(twitter withings).each do |provider|
+    define_method provider do
+      authentications.find_by(provider: provider)
+    end
   end
 end
