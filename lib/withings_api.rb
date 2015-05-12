@@ -21,7 +21,7 @@ class WithingsAPI
   end
 
   def oauth_signature_base_string(method, path, options)
-    options_str = options.map {|key, value| "#{key}=#{value}"}.sort.join('&')
+    options_str = options.map {|key, value| "#{key}=#{CGI.escape(value.to_s)}"}.sort.join('&')
 
     [method, CGI.escape(BASE_URI + path), CGI.escape(options_str)].join('&')
   end
