@@ -1,28 +1,16 @@
 require 'rails_helper'
 
 describe WithingsAPI do
-  # dummy values from http://oauth.withings.com/api
-  let(:consumer_key)    { '123456789' }
-  let(:consumer_secret) { '123456789' }
-  let(:omniauth_hash) {
-    {
-      provider:    'withings',
-      uid:         '123',
-      info:        {name: 'flada'},
-      credentials: {
-        token:  '9eeb4e2c976ec4d47b925392149c8bbceb5efcfd9b14441429e761052e52f',
-        secret: '29d7b29209c9222169d103b766fb5783f296788500df68e8f30f0cb4d60c'
-      }
-    }
+  let(:client) {
+    WithingsAPI.new do |config|
+      # dummy values from http://oauth.withings.com/api
+      config.consumer_key    = '123456789'
+      config.consumer_secret = '123456789'
+      config.uid             = '123'
+      config.token           = '9eeb4e2c976ec4d47b925392149c8bbceb5efcfd9b14441429e761052e52f'
+      config.token_secret    = '29d7b29209c9222169d103b766fb5783f296788500df68e8f30f0cb4d60c'
+    end
   }
-
-  let(:user) { User.create_by_oauth(omniauth_hash) }
-  let(:client) { WithingsAPI.new(user.withings) }
-
-  before do
-    WithingsAPI.consumer_key = consumer_key
-    WithingsAPI.consumer_secret = consumer_secret
-  end
 
   describe '#oauth_signature_key' do
     subject { client.oauth_signature_key }
