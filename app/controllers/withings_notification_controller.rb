@@ -4,7 +4,7 @@ class WithingsNotificationController < ApplicationController
   before_action :set_client
 
   def subscribe
-    res = @withings.create_notification(withings_callback_url, 'test')
+    res = @withings.create_notification(api_withings_callback_url, 'test')
 
     logger.debug res.inspect
 
