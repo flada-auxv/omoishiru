@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
 
   get '/withings/subscribe' => 'withings_notification#subscribe'
-  get '/withings/callback' => 'withings_notification#callback'
+  match '/withings/callback' => 'withings_notification#callback', via: %i(get post)
 end
