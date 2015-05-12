@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.2'
 
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faraday'
@@ -8,6 +9,7 @@ gem 'jquery-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-withings', github: 'flada-auxv/omniauth-withings'
 gem 'pg'
+gem 'puma'
 gem 'rails', github: "rails/rails", branch: "4-2-stable"
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
@@ -18,4 +20,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'web-console', '~> 2.0'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
