@@ -7,7 +7,8 @@ class Api::WithingsController < ApplicationController
   before_action :set_user, :set_client
 
   def callback
-    res = @withings.get_body_measures
+    # XXX いったん Weight のみに絞る
+    res = @withings.get_body_measures({meastype: 1})
 
     logger.debug res.inspect
 
@@ -15,8 +16,13 @@ class Api::WithingsController < ApplicationController
     res_hash = JSON.parse(res.body).with_indifferent_access
     latest_measure = res_hash[:body][:measuregrps].sort_by {|h| h[:date] }.reverse.first
     weight = latest_measure[:measures].find {|h| h[:type] == 1 }
-    real_value = (weight[:value] * (10 ** weight[:unit])).to_f
 
+    real_value = weight ? (weight[:value] * (10 ** weight[:unit])).to_f : ''
+
+    @twitter.update(<<-BODY.strip_heredoc)
+      Weight: #{real_value.to_s}
+      #omoishiru
+    BODY
     @twitter.update_profile(name: real_value.to_s)
 
     head :ok
