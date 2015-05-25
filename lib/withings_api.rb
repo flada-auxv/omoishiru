@@ -1,10 +1,17 @@
+require 'faraday_middleware'
+
 class WithingsAPI
   BASE_URI = 'http://wbsapi.withings.net'
 
   attr_accessor :consumer_key, :consumer_secret, :uid, :token, :token_secret
 
   def initialize(options = {})
-    @conn = Faraday.new(url: BASE_URI)
+    @conn = Faraday.new(url: BASE_URI) do |conn|
+      conn.adapter Faraday.default_adapter
+
+      conn.response :mashify
+      conn.response :json
+    end
 
     options.each do |key, value|
       instance_variable_set("@#{key}", value)

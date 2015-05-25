@@ -90,6 +90,8 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    faraday_middleware (0.9.1)
+      faraday (>= 0.7.4, < 0.10)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hamlit (1.0.0)
@@ -228,6 +230,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.1.0)
   faraday
+  faraday_middleware
   hamlit
   jbuilder (~> 2.0)
   jquery-rails

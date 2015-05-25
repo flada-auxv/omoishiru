@@ -3,6 +3,7 @@ ruby '2.2.2'
 
 gem 'coffee-rails', '~> 4.1.0'
 gem 'faraday'
+gem 'faraday_middleware'
 gem 'hamlit'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
