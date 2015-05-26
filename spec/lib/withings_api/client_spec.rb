@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WithingsAPI do
+describe WithingsApi::Client do
   # random hex numbers
   let(:consumer_key)    { '974d0ffdff081d8cd95f0e0b8f23b2e5' }
   let(:consumer_secret) { '9b057c4e64a71deb1d033084da385f89' }
@@ -9,7 +9,7 @@ describe WithingsAPI do
   let(:token_secret)    { '3386bbe192d2277b54c0e77115b7c0af' }
 
   let(:client) {
-    WithingsAPI.new do |config|
+    WithingsApi::Client.new do |config|
       config.consumer_key    = consumer_key
       config.consumer_secret = consumer_secret
       config.uid             = '123'

@@ -1,4 +1,4 @@
-require 'withings_api'
+require 'withings_api/client'
 
 class WithingsNotificationController < ApplicationController
   before_action :set_client
@@ -14,7 +14,7 @@ class WithingsNotificationController < ApplicationController
   private
 
   def set_client
-    @withings = WithingsAPI.new do |config|
+    @withings = WithingsApi::Client.new do |config|
       config.consumer_key    = ENV['WITHINGS_CONSUMER_KEY']
       config.consumer_secret = ENV['WITHINGS_CONSUMER_SECRET']
       config.uid             = current_user.withings.uid
