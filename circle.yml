@@ -1,0 +1,19 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  ruby:
+    version:
+      2.2.3
+
+deployment:
+   production:
+      branch: master
+      commands:
+        - |
+          if [ -z "${BUNDLE_UPDATE}" ] ; then
+            ./script/deploy-circleci.sh
+          else
+            gem update bundler --no-document
+            gem install circleci-bundle-update-pr
+            circleci-bundle-update-pr CircleCI circleci@example.com
+          fi
