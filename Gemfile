@@ -1,26 +1,31 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'hamlit'
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder'
 gem 'jquery-rails'
 gem 'omniauth-twitter'
 gem 'omniauth-withings', github: 'flada-auxv/omniauth-withings'
 gem 'pg'
 gem 'puma'
-gem 'rails', github: "rails/rails", branch: "4-2-stable"
-gem 'sass-rails', '~> 5.0'
 gem 'turbolinks'
 gem 'twitter'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
+
+gem 'rails', github: "rails/rails"
+gem 'sprockets-rails', github: "rails/sprockets-rails"
+gem 'sprockets', github: "rails/sprockets"
+gem 'sass-rails', github: "rails/sass-rails"
+gem 'arel', github: "rails/arel"
+gem 'rack', github: "rack/rack"
 
 group :development, :test do
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
 end
 
 group :production do
