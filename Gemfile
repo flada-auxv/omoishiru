@@ -12,7 +12,6 @@ gem 'omniauth-twitter'
 gem 'omniauth-withings', github: 'flada-auxv/omniauth-withings'
 gem 'pg'
 gem 'puma'
-gem 'turbolinks'
 gem 'twitter'
 gem 'uglifier'
 

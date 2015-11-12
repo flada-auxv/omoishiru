@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 53d04697d5c9450ecb5b7f37bdf0d5f12dd5ded5
+  revision: 19398ab98af04eedb2574890ed0d8ecdf82ebb4c
   specs:
     actionmailer (5.0.0.alpha)
       actionpack (= 5.0.0.alpha)
@@ -237,8 +237,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
-    turbolinks (2.5.3)
-      coffee-rails
     twitter (5.15.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -288,7 +286,6 @@ DEPENDENCIES
   sass-rails!
   sprockets!
   sprockets-rails!
-  turbolinks
   twitter
   uglifier
   web-console
