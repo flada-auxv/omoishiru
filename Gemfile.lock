@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/flada-auxv/omniauth.git
-  revision: fe61ad6fac242cafcd673dba1471ef198c1e0910
+  revision: 590b0d58ab7ac9b0a0dc696b77fed345325ab411
   branch: allow_rack_2_0_0
   specs:
     omniauth (1.2.2)
@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: c83d1e5508b27d810e37f11cec036a69697d26b8
+  revision: fdf5d4dfc30ce5a599392305567c0230c21b9b84
   specs:
     actionmailer (5.0.0.alpha)
       actionpack (= 5.0.0.alpha)
@@ -189,7 +189,7 @@ GEM
     omniauth-twitter (1.2.1)
       json (~> 1.3)
       omniauth-oauth (~> 1.1)
-    pg (0.18.3)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
