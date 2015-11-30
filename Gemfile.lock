@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 127a87cf6569f02d3e1b377b23e075e4dcecaac8
+  revision: f746534ca4654112453a7e4904acaed148314764
   specs:
     actionmailer (5.0.0.alpha)
       actionpack (= 5.0.0.alpha)
@@ -143,7 +143,7 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    hamlit (1.7.2)
+    hamlit (2.0.1)
       escape_utils
       temple (~> 0.7.6)
       thor
@@ -175,13 +175,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (2.99)
-    mini_portile (0.6.2)
+    mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.1.0)
-    nokogiri (1.6.6.4)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.6.7)
+      mini_portile2 (~> 2.0.0.rc2)
     oauth (0.4.7)
     omniauth-oauth (1.1.0)
       oauth
