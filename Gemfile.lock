@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: git://github.com/rack/rack.git
-  revision: c393176b0edf3e5d06cabbb6eb9d9c7a07b2afa7
+  revision: 96ae9b9fed8d6809383b6f48a5884437e76f8ca4
   specs:
     rack (2.0.0.alpha)
       json
@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 3da890f891b116218c10d9b049dba23d15d416cf
+  revision: 8570c806bf6785bed657eb172ff2d0c795c98505
   specs:
     actionmailer (5.0.0.alpha)
       actionpack (= 5.0.0.alpha)
@@ -106,15 +106,16 @@ GIT
 
 GIT
   remote: git://github.com/rails/sprockets.git
-  revision: 98d0ccc42949815d959cf95fbffd52a3df650358
+  revision: c35a637a26faa775912e24ee7e42d1e7dd2a39a5
   specs:
     sprockets (4.0.0)
-      rack (>= 1, < 3)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
+    addressable (2.4.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     buftok (0.2.0)
@@ -230,7 +231,7 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    sass (3.4.19)
+    sass (3.4.20)
     simple_oauth (0.3.1)
     slop (3.6.0)
     temple (0.7.6)
