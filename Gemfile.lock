@@ -16,71 +16,80 @@ GIT
 
 GIT
   remote: git://github.com/rack/rack.git
-  revision: c393176b0edf3e5d06cabbb6eb9d9c7a07b2afa7
+  revision: 2ac599551d6147184321c42f40a0ab3241499b08
   specs:
     rack (2.0.0.alpha)
       json
 
 GIT
   remote: git://github.com/rails/arel.git
-  revision: 3c429c5d86e9e2201c2a35d934ca6a8911c18e69
+  revision: ea2d50706a5f8215ff2346fa562423700b2d2b6e
   specs:
-    arel (7.0.0.alpha)
+    arel (7.0.0)
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 3da890f891b116218c10d9b049dba23d15d416cf
+  revision: c56e56773815221ef1fbd127f949c3e5207ea471
   specs:
-    actionmailer (5.0.0.alpha)
-      actionpack (= 5.0.0.alpha)
-      actionview (= 5.0.0.alpha)
-      activejob (= 5.0.0.alpha)
+    actioncable (5.0.0.beta1)
+      actionpack (= 5.0.0.beta1)
+      celluloid (~> 0.17.2)
+      coffee-rails (~> 4.1.0)
+      em-hiredis (~> 0.3.0)
+      faye-websocket (~> 0.10.0)
+      redis (~> 3.0)
+      websocket-driver (~> 0.6.1)
+    actionmailer (5.0.0.beta1)
+      actionpack (= 5.0.0.beta1)
+      actionview (= 5.0.0.beta1)
+      activejob (= 5.0.0.beta1)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 1.0, >= 1.0.5)
-    actionpack (5.0.0.alpha)
-      actionview (= 5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
+    actionpack (5.0.0.beta1)
+      actionview (= 5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
       rack (~> 2.x)
       rack-test (~> 0.6.3)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    actionview (5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
+    actionview (5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    activejob (5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
-      globalid (>= 0.3.0)
-    activemodel (5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
+    activejob (5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
+      globalid (>= 0.3.6)
+    activemodel (5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
       builder (~> 3.1)
-    activerecord (5.0.0.alpha)
-      activemodel (= 5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
-      arel (= 7.0.0.alpha)
-    activesupport (5.0.0.alpha)
+    activerecord (5.0.0.beta1)
+      activemodel (= 5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
+      arel (~> 7.0)
+    activesupport (5.0.0.beta1)
       concurrent-ruby (~> 1.0)
       i18n (~> 0.7)
       json (~> 1.7, >= 1.7.7)
       method_source
       minitest (~> 5.1)
       tzinfo (~> 1.1)
-    rails (5.0.0.alpha)
-      actionmailer (= 5.0.0.alpha)
-      actionpack (= 5.0.0.alpha)
-      actionview (= 5.0.0.alpha)
-      activejob (= 5.0.0.alpha)
-      activemodel (= 5.0.0.alpha)
-      activerecord (= 5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
+    rails (5.0.0.beta1)
+      actioncable (= 5.0.0.beta1)
+      actionmailer (= 5.0.0.beta1)
+      actionpack (= 5.0.0.beta1)
+      actionview (= 5.0.0.beta1)
+      activejob (= 5.0.0.beta1)
+      activemodel (= 5.0.0.beta1)
+      activerecord (= 5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
       bundler (>= 1.3.0, < 2.0)
-      railties (= 5.0.0.alpha)
+      railties (= 5.0.0.beta1)
       sprockets-rails (>= 2.0.0)
-    railties (5.0.0.alpha)
-      actionpack (= 5.0.0.alpha)
-      activesupport (= 5.0.0.alpha)
+    railties (5.0.0.beta1)
+      actionpack (= 5.0.0.beta1)
+      activesupport (= 5.0.0.beta1)
       method_source
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
@@ -97,33 +106,49 @@ GIT
 
 GIT
   remote: git://github.com/rails/sprockets-rails.git
-  revision: 06d84e952490d7d391592124f6e3b79f9c596674
+  revision: 419958f24fb4ce2d4c86f68f87c5a76767f3aa88
   specs:
-    sprockets-rails (3.0.0.beta3)
+    sprockets-rails (3.0.0)
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
 
 GIT
   remote: git://github.com/rails/sprockets.git
-  revision: 98d0ccc42949815d959cf95fbffd52a3df650358
+  revision: 47ac6ad00408bd1636e522e8977324e5138e74a4
   specs:
     sprockets (4.0.0)
-      rack (>= 1, < 3)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.8)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
+    addressable (2.4.0)
     buftok (0.2.0)
     builder (3.2.2)
     byebug (8.2.1)
+    celluloid (0.17.2)
+      celluloid-essentials
+      celluloid-extras
+      celluloid-fsm
+      celluloid-pool
+      celluloid-supervision
+      timers (>= 4.1.1)
+    celluloid-essentials (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-extras (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-fsm (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-pool (0.20.5)
+      timers (>= 4.1.1)
+    celluloid-supervision (0.20.5)
+      timers (>= 4.1.1)
     coderay (1.1.0)
-    coffee-rails (4.1.0)
+    coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
-      railties (>= 4.0.0, < 5.0)
+      railties (>= 4.0.0, < 5.1.x)
     coffee-script (2.4.1)
       coffee-script-source
       execjs
@@ -133,22 +158,29 @@ GEM
     diff-lcs (1.2.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    em-hiredis (0.3.0)
+      eventmachine (~> 1.0)
+      hiredis (~> 0.5.0)
     equalizer (0.0.10)
     erubis (2.7.0)
-    escape_utils (1.1.0)
+    eventmachine (1.0.8)
     execjs (2.6.0)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.10.0)
       faraday (>= 0.7.4, < 0.10)
+    faye-websocket (0.10.2)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
-    hamlit (2.0.1)
-      escape_utils
+    hamlit (2.2.0)
       temple (~> 0.7.6)
       thor
       tilt
     hashie (3.4.3)
+    hiredis (0.5.2)
+    hitimes (1.2.3)
     http (0.9.8)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -180,7 +212,7 @@ GEM
     multi_json (1.11.2)
     multipart-post (2.0.0)
     naught (1.1.0)
-    nokogiri (1.6.7)
+    nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
     oauth (0.4.7)
     omniauth-oauth (1.1.0)
@@ -214,6 +246,7 @@ GEM
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     rake (10.4.2)
+    redis (3.2.2)
     rspec-core (3.1.7)
       rspec-support (~> 3.1.0)
     rspec-expectations (3.1.2)
@@ -230,13 +263,15 @@ GEM
       rspec-mocks (~> 3.1.0)
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
-    sass (3.4.19)
+    sass (3.4.20)
     simple_oauth (0.3.1)
     slop (3.6.0)
     temple (0.7.6)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.1)
+    timers (4.1.1)
+      hitimes
     twitter (5.15.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -256,11 +291,13 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.1)
-    web-console (2.2.1)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    web-console (3.0.0)
+      activemodel (>= 4.2)
+      debug_inspector
+      railties (>= 4.2)
+    websocket-driver (0.6.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.2)
 
 PLATFORMS
   ruby
@@ -291,4 +328,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.10.6
+   1.11.2
