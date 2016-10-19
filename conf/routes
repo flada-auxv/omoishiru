@@ -1,10 +1,8 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
-
 module:testrunner
 
 GET     /                                       App.Index
+GET     /auth/twitter                           Session.New
+GET     /auth/twitter/callback                  Session.Create
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
